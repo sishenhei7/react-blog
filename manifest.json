@@ -3,7 +3,7 @@
   "name": "bora's blog",
   "icons": [
     {
-      "src": "favicon.svg",
+      "src": "favicon.png",
     }
   ],
   "start_url": "./index.html",
