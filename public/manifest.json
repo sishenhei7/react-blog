@@ -1,0 +1,13 @@
+{
+  "short_name": "bora's blog",
+  "name": "bora's blog",
+  "icons": [
+    {
+      "src": "favicon.png",
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
