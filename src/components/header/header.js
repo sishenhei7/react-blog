@@ -1,21 +1,20 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React from 'react'
 import { Layout, Row, Col } from 'antd';
-import Navigate from '../menu/menu';
+import Navigate from './navigate';
 
 const { Header } = Layout;
 
 export default () => (
-	<Header className="header-container">
+	<Header className="header">
 	  <Row>
 	    <Col
 	      lg={{span: 5}}
 	      md={{span: 5}}
 	      xs={{span: 24}}
 	    >
-	      <Link to='/' className="logo">
-	      	Bora's Blog
-	      </Link>
+	      <div className="logo">
+	      	馒头加梨子
+	      </div>
 	    </Col>
 
 	    <Col
@@ -29,5 +28,6 @@ export default () => (
 
 	  </Row>
 	</Header>
-
 )
+
+
