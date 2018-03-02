@@ -1,37 +1,68 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import { List, Icon, Tag } from 'antd';
+import { List, Icon, Tag, BackTop, Col, Row, Card } from 'antd';
+import { getColor, getBlog, getList } from '../../config/methods';
+import './list.css'
 
 class BlogList extends Component {
+	constructor() {
+		super();
+		this.state = {
+			loading: true,
+			blogList: [],
+		};
+	};
+
+	componentWillMount() {
+		if (this.props.location.state) {
+			this.setState({
+					loading: !this.state.loading,
+					blogList: this.props.location.state
+			});
+		} else {
+			getBlog().then(json => {
+				this.setState({
+					loading: !this.state.loading,
+					blogList: getList(json)
+				});
+			});
+		}
+	};
 
 	render() {
-		const pagination = {
-		  pageSize: 10,
-		  current: 1,
-		  total: this.props.location.state.length,
-		  onChange: (() => {}),
-		};
-
 		return (
-			<List
-				itemLayout="vertical"
-				size="small"
-				bordered
-				pagination={pagination}
-				dataSource={this.props.location.state}
-				renderItem={item => (
-		      <List.Item>
-			      <Link to={{
-							pathname:`posts/${item.num}`,
-							state: item
-			      }}>
-			      	{item.title}
-			      	<Tag color={`#${item.color}`}>{item.tag}</Tag>
-			      	{item.date}
-			      </Link>
-					</List.Item>
-					)}
-			/>
+			<Row>
+				<Col
+					lg={{ span: 14, offset: 5 }}
+					md={{ span: 14, offset: 5 }}
+					xs={{ span: 24 }}
+					className='list-wrapper'
+				>
+					<List
+						itemLayout="vertical"
+						bordered
+						loading={this.state.loading}
+						dataSource={this.state.blogList}
+						renderItem={item => (
+				      <List.Item
+								extra={<Tag color='blue'>{item.date}</Tag>}
+				      >
+				      	<Link to={{
+									pathname:`posts/${item.num}`,
+									state: item
+					      }}>
+					      	{item.title}
+					      	<Tag color={getColor(item.tag)} style={{ marginLeft: 8 }}>{item.tag}</Tag>
+					      </Link>
+							</List.Item>
+							)}
+					/>
+				</Col>
+				<BackTop visibilityHeight={250}>
+				  <div className="ant-back-top-inner">UP</div>
+				</BackTop>
+			</Row>
+
 		)
 	}
 }

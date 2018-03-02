@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom';
-import { Menu, Icon } from 'antd';
+import {Link, withRouter} from 'react-router-dom';
+import { Menu, Icon, Card, Button, Radio, Tabs } from 'antd';
 import { getBlog, getList } from '../../config/methods';
+
 class Navigate extends Component {
 	constructor() {
 		super();
@@ -12,43 +13,31 @@ class Navigate extends Component {
 
 	componentWillMount() {
 		getBlog().then(json => {
-			console.log(getList(json));
 			this.setState({
 				blogList: getList(json)
 			});
 		});
 	};
 
+	handlehistory(e){
+		let historyPath = {
+			'馒头加梨子': '/',
+			'文档': {pathname:'/list', state:this.state.blogList},
+			'关于我': '/about'
+		};
+		this.props.history.push(historyPath[e.target.value]);
+	}
+
 	render() {
 		return (
-			<Menu
-				theme="dark"
-				mode="horizontal"
-				defaultSelectedKeys={['1']}
-				style={{ lineHeight: '64px' }}
-			>
-				<Menu.Item key='1'>
-					<Link to='/'>
-						<Icon type='home' spin='true' />首页
-					</Link>
-				</Menu.Item>
-				<Menu.Item key='2'>
-					<Link to={{
-						pathname:'/list',
-						state:this.state.blogList
-					}}>
-						<Icon type='edit' spin='true' />文档
-					</Link>
-				</Menu.Item>
-				<Menu.Item key='3'>
-					<Link to='/about'>
-						<Icon type='smile-o' spin='true' />关于我
-					</Link>
-				</Menu.Item>
-			</Menu>
+			<Radio.Group onChange={this.handlehistory.bind(this)} className="navigate-wrapper">
+			  <Radio.Button value="馒头加梨子"><Icon type='home'/>馒头加梨子</Radio.Button>
+			  <Radio.Button value="文档"><Icon type='edit'/>文档</Radio.Button>
+			  <Radio.Button value="关于我"><Icon type='smile-o'/>关于我</Radio.Button>
+			</Radio.Group>
 		)
 	}
 }
 
-export default Navigate
+export default withRouter(Navigate)
 
