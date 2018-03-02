@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { Layout, Row, Col } from 'antd';
 import Navigate from './navigate';
 import './header.css';
@@ -8,9 +9,16 @@ const { Header } = Layout;
 export default () => (
 	<Header className="header-wrapper">
 	  <Row>
+      <Col
+  	    lg={{ span: 5, offset: 5 }}
+  	    md={{ span: 5, offset: 5 }}
+  	    xs={{ span: 0 }}
+      >
+			<Link to='/' className="logo">馒头加梨子</Link>
+      </Col>
 	    <Col
-		    lg={{ span: 14, offset: 5 }}
-		    md={{ span: 14, offset: 5 }}
+		    lg={{ span: 9 }}
+		    md={{ span: 9 }}
 		    xs={{ span: 24 }}
 	    >
 	      <Navigate>

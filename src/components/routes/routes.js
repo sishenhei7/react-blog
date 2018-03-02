@@ -7,7 +7,7 @@ import About from '../about/about';
 
 const parts = [{
   key: '文章',
-  path: '/list',
+  path: '/',
   component: List
 }, {
     key: '文章详情',

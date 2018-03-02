@@ -1,7 +1,21 @@
 import React, { Component } from 'react'
-import {Link, withRouter} from 'react-router-dom';
-import { Menu, Icon, Card, Button, Radio, Tabs } from 'antd';
+import { withRouter } from 'react-router-dom';
+import { Icon, Radio } from 'antd';
 import { getBlog, getList } from '../../config/methods';
+
+const navigateConfig = [{
+	value: "文档",
+	icon: "edit",
+	content: "文档"
+}, {
+	value: "学习",
+	icon: "bulb",
+	content: "学习"
+}, {
+	value: "关于",
+	icon: "smile-o",
+	content: "关于"
+}]
 
 class Navigate extends Component {
 	constructor() {
@@ -21,19 +35,19 @@ class Navigate extends Component {
 
 	handlehistory(e){
 		let historyPath = {
-			'馒头加梨子': '/',
-			'文档': {pathname:'/list', state:this.state.blogList},
-			'关于我': '/about'
+			'文档': {pathname:'/', state:this.state.blogList},
+			'学习': '/learning',
+			'关于': '/about'
 		};
 		this.props.history.push(historyPath[e.target.value]);
 	}
 
 	render() {
 		return (
-			<Radio.Group onChange={this.handlehistory.bind(this)} className="navigate-wrapper">
-			  <Radio.Button value="馒头加梨子"><Icon type='home'/>馒头加梨子</Radio.Button>
-			  <Radio.Button value="文档"><Icon type='edit'/>文档</Radio.Button>
-			  <Radio.Button value="关于我"><Icon type='smile-o'/>关于我</Radio.Button>
+			<Radio.Group className="navigate-wrapper">
+				{navigateConfig.map((item) => (
+					<Radio.Button key={item.value} value={item.value} onClick={this.handlehistory.bind(this)}><Icon type={item.icon}/>{item.content}</Radio.Button>
+					))}
 			</Radio.Group>
 		)
 	}

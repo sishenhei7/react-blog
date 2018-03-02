@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import { Layout, Menu, Icon, Affix, Dropdown, Button, Anchor, Card } from 'antd';
+import { Menu, Icon, Affix, Dropdown, Button } from 'antd';
 import { getCatalog } from '../../config/methods';
-
-const { SubMenu } = Menu;
-const { Header, Content, Footer, Sider } = Layout;
-const { Link } = Anchor;
 
 class Catalog extends Component {
 	constructor() {
@@ -26,9 +22,6 @@ class Catalog extends Component {
 	render() {
 		let num = 0;
 		const catalog = getCatalog(this.props.desc);
-		const anchorCatalog = catalog.length===0 ? [] : catalog.map((item) => [item, num]) ;
-		console.log(catalog);
-		console.log(anchorCatalog);
 
 		const menu = (
 		  <Menu>

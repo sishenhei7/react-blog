@@ -41,6 +41,7 @@ export function setAnchor(desc) {
 		}
 		helpAnchor.push(item);
 		num = num + 1;
+		return null;
 	})
 	return helpAnchor.join('')
 }

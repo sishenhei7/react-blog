@@ -1,3 +1,53 @@
 .list-wrapper .ant-list-item-content {
   margin-bottom: 0;
 }
+
+.list-wrapper a {
+  color: #399ab2;
+}
+
+.list-wrapper a {
+    position: relative;
+    display: inline-block;
+}
+
+.list-wrapper a:before,
+.list-wrapper a:after {
+    position: absolute;
+    top: 0;
+    font-weight: 100;
+    font-size: 150%;
+    line-height: 1;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.list-wrapper a:before {
+    left: -0.1em;
+    content: '[';
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+.list-wrapper a:after {
+    right: -0.1em;
+    content: ']';
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+}
+
+.list-wrapper a:hover::before,
+.list-wrapper a:hover::after {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.list-wrapper a:hover {
+    color: #d9534f !important;
+}
+
+.list-wrapper .ant-list-item:hover {
+		background-color: #f6f6f6;
+}

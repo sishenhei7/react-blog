@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import marked from 'marked'
 import hljs from 'highlight.js'
-import fetch from 'isomorphic-fetch';
 import { Row, Col, Card, BackTop, Tag } from 'antd';
 import Catalog from './catalog'
-import { apiUrl } from '../../config/config';
 import { getBlog, getList, getColor, setAnchor } from '../../config/methods';
 import '../../highlight.min.css';
 import './posts.css';

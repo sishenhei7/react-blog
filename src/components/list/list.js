@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import { List, Icon, Tag, BackTop, Col, Row, Card } from 'antd';
+import { List, Tag, BackTop, Col, Row } from 'antd';
 import { getColor, getBlog, getList } from '../../config/methods';
 import './list.css'
 
@@ -52,8 +52,8 @@ class BlogList extends Component {
 									state: item
 					      }}>
 					      	{item.title}
-					      	<Tag color={getColor(item.tag)} style={{ marginLeft: 8 }}>{item.tag}</Tag>
 					      </Link>
+					      <Tag color={getColor(item.tag)} style={{ marginLeft: 8 }}>{item.tag}</Tag>
 							</List.Item>
 							)}
 					/>

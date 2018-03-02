@@ -3,8 +3,33 @@
 	background-color: #fff;
   outline: none;
 }
-
+.header-wrapper .logo {
+  float: left;
+  font-size: 25px;
+  font-family: "Chancery",cursive,LiSu,sans-serif;
+}
 .header-wrapper .navigate-wrapper{
 	text-align: center;
 	display: block;
 }
+
+.header-wrapper .ant-radio-button-wrapper:hover {
+	color: #fff;
+	background-color: #1890ff;
+	border-color: #1890ff;
+}
+
+.header-wrapper .logo {
+	-webkit-transition: all ease-out 1s;
+	-o-transition: all ease-out 1s;
+	transition: all ease-out 1s;
+}
+
+.header-wrapper .logo:hover{
+	text-decoration: underline;
+	-webkit-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	transform: scale(1.5);
+}
+
