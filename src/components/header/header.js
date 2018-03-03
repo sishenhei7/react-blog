@@ -14,7 +14,7 @@ export default () => (
   	    md={{ span: 5, offset: 5 }}
   	    xs={{ span: 0 }}
       >
-			<Link to='/' className="logo">馒头加梨子</Link>
+			<Link to='/react-blog' className="logo">馒头加梨子</Link>
       </Col>
 	    <Col
 		    lg={{ span: 9 }}

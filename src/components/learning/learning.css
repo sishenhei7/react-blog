@@ -1,0 +1,7 @@
+.learning-wrapper a:hover {
+    color: #D03500;
+}
+
+.learning-wrapper .ant-collapse-header:hover {
+  background-color: #f6f6f6;
+}

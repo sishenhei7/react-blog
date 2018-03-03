@@ -7,19 +7,19 @@ import About from '../about/about';
 
 const parts = [{
   key: '文章',
-  path: '/',
+  path: '/react-blog',
   component: List
 }, {
     key: '文章详情',
-    path: '/posts/:id',
+    path: '/react-blog/posts/:id',
     component: Posts
 }, {
-  key: '学习',
-  path: '/learning',
+  key: '作品',
+  path: '/react-blog/learning',
   component: Learning
 }, {
   key: '关于我',
-  path: '/about',
+  path: '/react-blog/about',
   component: About
 }];
 

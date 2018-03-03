@@ -8,9 +8,9 @@ const navigateConfig = [{
 	icon: "edit",
 	content: "文档"
 }, {
-	value: "学习",
+	value: "作品",
 	icon: "bulb",
-	content: "学习"
+	content: "作品"
 }, {
 	value: "关于",
 	icon: "smile-o",
@@ -35,9 +35,9 @@ class Navigate extends Component {
 
 	handlehistory(e){
 		let historyPath = {
-			'文档': {pathname:'/', state:this.state.blogList},
-			'学习': '/learning',
-			'关于': '/about'
+			'文档': {pathname:'/react-blog', state:this.state.blogList},
+			'作品': {pathname:'/react-blog/learning', state:this.state.blogList},
+			'关于': '/react-blog/about'
 		};
 		this.props.history.push(historyPath[e.target.value]);
 	}

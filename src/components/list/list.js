@@ -48,7 +48,7 @@ class BlogList extends Component {
 								extra={<Tag color='blue'>{item.date}</Tag>}
 				      >
 				      	<Link to={{
-									pathname:`posts/${item.num}`,
+									pathname:`/react-blog/posts/${item.num}`,
 									state: item
 					      }}>
 					      	{item.title}

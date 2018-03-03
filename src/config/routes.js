@@ -1,15 +1,18 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Redirect,
+  Switch
 } from 'react-router-dom';
 import Layout from '../components/layout';
 
 export default () => (
 	<Router>
-	  <div>
-			<Route path='/' component={Layout} />
-	  </div>
+	  <Switch>
+			<Route path='/react-blog' component={Layout} />
+			<Redirect from='/' to='/react-blog'/>
+	  </Switch>
 	</Router>
 )
 

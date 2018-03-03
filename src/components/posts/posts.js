@@ -30,7 +30,6 @@ class Posts extends Component {
 			highlight: code => hljs.highlightAuto(code).value
 		});
 
-
 		if (this.props.location.state) {
 			this.setState({
 					loading: !this.state.loading,
