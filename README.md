@@ -20,7 +20,11 @@
 ### 想做的
 
 1.component按需加载
+
 2.使用redux重构
+
 3.使用react native重构
-3.加入后台服务端
-4.github登录 + 评论功能
+
+4.加入后台服务端
+
+5.github登录 + 评论功能
