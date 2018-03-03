@@ -1,7 +1,5 @@
 ## 说明
 
-<hr>
-
 这是一个使用```react + antd + react-router + issue + es6```的单页面静态博客，点击[「馒头加梨子」](https://sishenhei7.github.io/react-blog)查看博客。
 
 此博客基于```github issue```和```github api```搭建。
@@ -10,13 +8,9 @@
 
 ## Fork 使用
 
-<hr>
-
 将配置文件```src/config/config.js```配置修改成自己的账号。
 
 ## 命令使用
-
-<hr>
 
 ### 安装
 
@@ -38,8 +32,6 @@ npm run build
 
 ## 技术栈
 
-<hr>
-
 - react@16.2.0
 - react-scripts@1.1.1
 - react-router-dom@4.2.2      -> 路由功能
@@ -51,13 +43,15 @@ npm run build
 
 ## 想做的
 
-<hr>
-
 1.component按需加载
+
 2.使用redux重构
+
 3.使用react native重构
-3.加入后台服务端
-4.github登录 + 评论功能
+
+4.加入后台服务端
+
+5.github登录 + 评论功能
 
 
 
