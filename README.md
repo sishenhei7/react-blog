@@ -19,12 +19,16 @@
 
 ### 想做的
 
-1.component按需加载
+- 增加博客加载进度条
 
-2.使用redux重构
+- 增加标签，点击自动分类搜索
 
-3.使用react native重构
+- github登录 + 评论功能
 
-4.加入后台服务端
+- component按需加载
 
-5.github登录 + 评论功能
+- 使用redux重构
+
+- 使用react native重构
+
+- 加入后台服务端
