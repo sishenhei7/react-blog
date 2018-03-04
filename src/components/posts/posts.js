@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import marked from 'marked'
 import hljs from 'highlight.js'
-import { Row, Col, Card, BackTop, Tag } from 'antd';
-import Catalog from './catalog'
-import { getBlog, getList, getColor, setAnchor } from '../../config/methods';
+import { Row, Col } from 'antd';
+import Catalog from './catalog';
+import Article from './article';
+import { getBlog, getList } from '../../config/methods';
 import '../../highlight.min.css';
 import './posts.css';
 
@@ -54,16 +55,7 @@ class Posts extends Component {
 					xs={{ span: 24 }}
 					className='posts-wrapper'
 				>
-					<Card
-						loading={this.state.loading}
-						title={this.state.blog.title}
-						extra={[
-							<Tag color={getColor(this.state.blog.tag)} key="tag">{this.state.blog.tag}</Tag>,
-							<Tag color="blue" key="time">{this.state.blog.date}</Tag>
-						]}
-					>
-					  <div dangerouslySetInnerHTML={{__html:setAnchor(marked(this.state.blog.desc))}}></div>
-					</Card>
+					<Article loading={this.state.loading} blog={this.state.blog}></Article>
 				</Col>
 				<Col
           lg={{ span: 3, offset: 0 }}
@@ -72,9 +64,6 @@ class Posts extends Component {
         >
 					<Catalog desc={this.state.blog.desc}></Catalog>
         </Col>
-        <BackTop visibilityHeight={250}>
-          <div className="ant-back-top-inner">UP</div>
-        </BackTop>
 			</Row>
 		)
 	}

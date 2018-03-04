@@ -4,6 +4,7 @@ import Header from './header/header';
 import Routes from './routes/routes';
 import './layout.css';
 
+
 const { Footer, Content } = Layout;
 const contentHeight = document.body.clientHeight - 64 - 71;
 
