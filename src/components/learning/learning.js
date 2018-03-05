@@ -50,7 +50,16 @@ class Learning extends Component {
       	      	古龙语录
       	      </Link>
 		  		  </Panel>
-					  <Panel header="impress.js做的PPT" key="6">
+		  		  <Panel header="开发油猴脚本" key="6">
+      		  	这是我开发的
+            	<Link to={{
+      					pathname:'/react-blog/posts/10',
+      					state: this.props.location.state[this.props.location.state.length - 10]
+      	      }}>
+      	      	油猴脚本
+      	      </Link>
+		  		  </Panel>
+					  <Panel header="impress.js做的PPT" key="7">
 					  	这是我
 			      	<a href="https://sishenhei7.github.io/impress_js_ppt/" target="_blank" rel="noopener noreferrer">用impress.js做的PPT<Icon type="export" /></a>
 			      	<p>(注意：按空格键翻页)</p>

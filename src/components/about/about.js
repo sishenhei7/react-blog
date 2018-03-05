@@ -21,7 +21,7 @@ export default () => (
 					<p style={{marginTop: 20}}><Icon type="flag" /> 这个博客主要是用来记录我的一些技术点滴，和一些其他方面的随笔，感悟，生活等。</p>
 			  </Panel>
 			  <Panel header="我的简历" key="2">
-			  	<p>嘿！你好，这是简历！(2018.03.03更新)</p>
+			  	<p>嘿！你好，这是<a href="https://sishenhei7.github.io/Resume/" target="_blank" rel="noopener noreferrer">在线简历<Icon type="export" /></a>！(2018.03.05更新)</p>
 			  </Panel>
 			  <Panel header="联系我" key="3">
 	      	<p><Icon type="mail" /> 邮箱：1417145026@qq.com</p>
