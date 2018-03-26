@@ -6,6 +6,8 @@
 
 由于某些原因，此博客不支持在浏览器端进行'刷新键'操作，如果要查看完整功能的博客请点击[「CandyBullet」](https://candybullet.github.io)。
 
+*注意：由于同时要更新3个博客很麻烦，所以我停止了这个博客的更新，大家可以到我另一个博客查看功能更新[「CandyBullet」](https://candybullet.github.io)*
+
 ### 技术栈
 
 - react@16.2.0
