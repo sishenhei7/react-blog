@@ -33,11 +33,28 @@ class Navigate extends Component {
 		this.props.history.push(historyPath[e.target.value]);
 	}
 
+	initChecked(item) {
+		const urlName = this.props.location.pathname.split('/')[2];
+		if(item.value == '作品') {
+			if(urlName == 'learning') {
+				return true;
+			}
+			return false;
+		} else if(item.value == '关于') {
+			if(urlName == 'about') {
+				return true;
+			}
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 	render() {
 		return (
 			<Radio.Group className="navigate-wrapper">
 				{navigateConfig.map((item) => (
-					<Radio.Button key={item.value} value={item.value} onClick={this.handlehistory.bind(this)}><Icon type={item.icon}/>{item.content}</Radio.Button>
+					<Radio.Button checked={ this.initChecked(item) } key={item.value} value={item.value} onClick={this.handlehistory.bind(this)}><Icon type={item.icon}/>{item.content}</Radio.Button>
 					))}
 			</Radio.Group>
 		)

@@ -24,17 +24,17 @@ class Catalog extends Component {
 		const catalog = getCatalog(this.props.desc);
 
 		const menu = (
-		  <Menu>
-		  	{catalog.map((item) => {
-		  		num = num + 1;
-		  		return(
-		  			<Menu.Item key={num}><a onClick={this.scrollToAnchor.bind(this, `anchor${num}`)}>{`[${num}]${item}`}</a></Menu.Item>
-		  		)})}
-		  </Menu>
+			<Menu>
+				{catalog.map((item) => {
+					num = num + 1;
+					return(
+						<Menu.Item key={num}><a onClick={this.scrollToAnchor.bind(this, `anchor${num}`)}>{`[${num}]${item}`}</a></Menu.Item>
+					)})}
+			</Menu>
 		);
 
 		return (
-			<Affix offsetTop={120} className='Catalog-wrapper'>
+			<Affix offsetTop={120} className='catalog-wrapper'>
 			  <Dropdown overlay={menu} trigger={['click']}>
 			    <Button type="primary">
 			      <Icon type="profile" />目录 <Icon type="down" />
