@@ -32,7 +32,7 @@ class Posts extends Component {
 
 		this.setState({
 			loading: !this.state.loading,
-			blog: this.props.blogList
+			blog: this.props.blogList[this.props.match.params.id]
 		});
 	};
 
@@ -48,12 +48,12 @@ class Posts extends Component {
 					<Article loading={this.state.loading} blog={this.state.blog}></Article>
 				</Col>
 				<Col
-          lg={{ span: 3, offset: 0 }}
-          md={{ span: 3, offset: 0 }}
-          xs={{ span: 0 }}
-        >
+					lg={{ span: 3, offset: 0 }}
+					md={{ span: 3, offset: 0 }}
+					xs={{ span: 0 }}
+        		>
 					<Catalog desc={this.state.blog.desc}></Catalog>
-        </Col>
+        		</Col>
 			</Row>
 		)
 	}
