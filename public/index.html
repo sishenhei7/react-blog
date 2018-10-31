@@ -19,6 +19,46 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <script>
+    (function() {
+        'use strict';
+        // Set the name of the "hidden" property and the change event for visibility
+        var hidden, visibilityChange;
+        if (typeof document.hidden !== "undefined") {
+          hidden = "hidden";
+          visibilityChange = "visibilitychange";
+        } else if (typeof document.mozHidden !== "undefined") { // Firefox up to v17
+          hidden = "mozHidden";
+          visibilityChange = "mozvisibilitychange";
+        } else if (typeof document.webkitHidden !== "undefined") { // Chrome up to v32, Android up to v4.4, Blackberry up to v10
+          hidden = "webkitHidden";
+          visibilityChange = "webkitvisibilitychange";
+        }
+        // If the page is hidden, change the title;
+        function handleVisibilityChange() {
+          if (document[hidden]) {
+            document.title = '(●—●)喔哟，崩溃啦！';
+          } else {
+            document.title = '(/≧▽≦/)馒头加梨子！';
+          }
+        }
+        // Warn if the browser doesn't support addEventListener or the Page Visibility API
+        if (typeof document.addEventListener === "undefined" || typeof document[hidden] === "undefined") {
+          console.log("This demo requires a modern browser that supports the Page Visibility API.");
+        } else {
+          // Handle page visibility change
+          document.addEventListener(visibilityChange, handleVisibilityChange, false);}
+    })();
+    </script>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c598c119680432ec000b8f2f802935fe";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
     <title>馒头加梨子</title>
   </head>
   <body>

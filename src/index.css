@@ -17,5 +17,35 @@ body{
 	background:#fff;
 }
 
+/* animate */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
 
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.list-wrapper,
+.learning-wrapper,
+.about-wrapper,
+.posts-wrapper
+ {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+}
 
