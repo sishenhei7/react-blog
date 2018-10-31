@@ -14,7 +14,7 @@ export default () => (
     >
 			<Collapse defaultActiveKey={['1']}>
 			  <Panel header="关于我" key="1">
-	      	<p><Icon type="user" /> 姓名：杨舟/男/26岁</p>
+	      	<p><Icon type="user" /> 姓名：杨舟/男</p>
 	      	<p style={{marginTop: 20}}><Icon type="environment" /> 所在地：广州</p>
 	      	<p style={{marginTop: 20}}><Icon type="idcard" /> 关键词：前端，数学，古龙迷，宅</p>
 	      	<p style={{marginTop: 20}}><Icon type="global" /> 毕业院校：西南交通大学/数学与应用数学</p>
