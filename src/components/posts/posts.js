@@ -4,7 +4,6 @@ import hljs from 'highlight.js'
 import { Row, Col } from 'antd';
 import Catalog from './catalog';
 import Article from './article';
-import { getBlog, getList } from '../../config/methods';
 import '../../highlight.min.css';
 import './posts.css';
 
@@ -31,19 +30,10 @@ class Posts extends Component {
 			highlight: code => hljs.highlightAuto(code).value
 		});
 
-		if (this.props.location.state) {
-			this.setState({
-					loading: !this.state.loading,
-					blog: this.props.location.state
-			});
-		} else {
-			getBlog().then(json => {
-				this.setState({
-					loading: !this.state.loading,
-					blog: getList(json)[this.props.match.params.id]
-				});
-			});
-		}
+		this.setState({
+			loading: !this.state.loading,
+			blog: this.props.blogList
+		});
 	};
 
 	render() {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 import { Icon, Radio } from 'antd';
-import { getBlog, getList } from '../../config/methods';
 
 const navigateConfig = [{
 	value: "文档",
@@ -25,18 +24,10 @@ class Navigate extends Component {
 		};
 	};
 
-	componentWillMount() {
-		getBlog().then(json => {
-			this.setState({
-				blogList: getList(json)
-			});
-		});
-	};
-
 	handlehistory(e){
 		let historyPath = {
-			'文档': {pathname:'/react-blog', state:this.state.blogList},
-			'作品': {pathname:'/react-blog/learning', state:this.state.blogList},
+			'文档': {pathname:'/react-blog'},
+			'作品': {pathname:'/react-blog/learning'},
 			'关于': '/react-blog/about'
 		};
 		this.props.history.push(historyPath[e.target.value]);

@@ -23,7 +23,7 @@ class Learning extends Component {
       		  	这是我的建站过程
             	<Link to={{
       					pathname:'/react-blog/posts/9',
-      					state: this.props.location.state[this.props.location.state.length - 9]
+      					state: this.props.blogList[this.props.blogList.length - 9]
       	      }}>
       	      	从小白到用antd+react+react-router+issue+es6搭建博客
       	      </Link>
@@ -36,7 +36,7 @@ class Learning extends Component {
       		  	这是我整理的
             	<Link to={{
       					pathname:'/react-blog/posts/8',
-      					state: this.props.location.state[this.props.location.state.length - 8]
+      					state: this.props.blogList[this.props.blogList.length - 8]
       	      }}>
       	      	知识资源
       	      </Link>
@@ -45,7 +45,7 @@ class Learning extends Component {
       		  	这是我整理的
             	<Link to={{
       					pathname:'/react-blog/posts/6',
-      					state: this.props.location.state[this.props.location.state.length - 6]
+      					state: this.props.blogList[this.props.blogList.length - 6]
       	      }}>
       	      	古龙语录
       	      </Link>
@@ -54,7 +54,7 @@ class Learning extends Component {
       		  	这是我开发的
             	<Link to={{
       					pathname:'/react-blog/posts/10',
-      					state: this.props.location.state[this.props.location.state.length - 10]
+      					state: this.props.blogList[this.props.blogList.length - 10]
       	      }}>
       	      	油猴脚本
       	      </Link>
