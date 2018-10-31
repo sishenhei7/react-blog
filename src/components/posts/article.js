@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import marked from 'marked'
 import hljs from 'highlight.js'
-import { Card, BackTop, Tag } from 'antd';
+import { Card, BackTop, Tag, Divider } from 'antd';
 import { getColor, setAnchor } from '../../config/methods';
 import '../../highlight.min.css';
 
@@ -12,10 +12,18 @@ class Article extends Component {
 		});
 	};
 
-	render() {
-		return (
+	getLoadingArticle() {
+		return(
 			<Card
-				loading={this.props.loading}
+				loading={true}
+			>
+			</Card>
+		);
+	}
+
+	getLoadedArticle() {
+		return(
+			<Card
 				title={this.props.blog.title}
 				extra={[
 					<Tag color={getColor(this.props.blog.tag)} key="tag">{this.props.blog.tag}</Tag>,
@@ -27,6 +35,14 @@ class Article extends Component {
 			    <div className="ant-back-top-inner">UP</div>
 			  </BackTop>
 			</Card>
+		);
+	}
+
+	render() {
+		return (
+			<div>
+				{ this.props.loading ? this.getLoadingArticle() : this.getLoadedArticle() }
+			</div>
 		)
 	}
 }

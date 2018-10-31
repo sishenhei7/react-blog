@@ -7,6 +7,7 @@ const Panel = Collapse.Panel;
 
 class Learning extends Component {
 	render() {
+		console.log(this.props.blogList);
 		return(
 		  <Row>
 		    <Col
@@ -22,8 +23,7 @@ class Learning extends Component {
 		  		  <Panel header="建站过程" key="2">
       		  	这是我的建站过程
             	<Link to={{
-      					pathname:'/react-blog/posts/9',
-      					state: this.props.blogList[this.props.blogList.length - 9]
+      					pathname:'/react-blog/posts/9'
       	      }}>
       	      	从小白到用antd+react+react-router+issue+es6搭建博客
       	      </Link>
@@ -35,8 +35,7 @@ class Learning extends Component {
 		  		  <Panel header="知识资源" key="4">
       		  	这是我整理的
             	<Link to={{
-      					pathname:'/react-blog/posts/8',
-      					state: this.props.blogList[this.props.blogList.length - 8]
+      					pathname:'/react-blog/posts/8'
       	      }}>
       	      	知识资源
       	      </Link>
@@ -44,8 +43,7 @@ class Learning extends Component {
 		  		  <Panel header="古龙语录" key="5">
       		  	这是我整理的
             	<Link to={{
-      					pathname:'/react-blog/posts/6',
-      					state: this.props.blogList[this.props.blogList.length - 6]
+      					pathname:'/react-blog/posts/6'
       	      }}>
       	      	古龙语录
       	      </Link>
@@ -53,8 +51,7 @@ class Learning extends Component {
 		  		  <Panel header="开发油猴脚本" key="6">
       		  	这是我开发的
             	<Link to={{
-      					pathname:'/react-blog/posts/10',
-      					state: this.props.blogList[this.props.blogList.length - 10]
+      					pathname:'/react-blog/posts/10'
       	      }}>
       	      	油猴脚本
       	      </Link>

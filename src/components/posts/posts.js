@@ -17,26 +17,20 @@ const defaultBlog = {
 };
 
 class Posts extends Component {
-	constructor() {
-		super();
-		this.state = {
-			loading: true,
-			blog: defaultBlog,
-		};
-	};
-
-	componentWillMount() {
+	componentDidMount() {
 		marked.setOptions({
 			highlight: code => hljs.highlightAuto(code).value
 		});
 
-		this.setState({
-			loading: !this.state.loading,
-			blog: this.props.blogList[this.props.match.params.id]
-		});
+		// this.setState({
+		// 	loading: !this.state.loading,
+		// 	blog: this.props.blogList[this.props.blogList.length - this.props.match.params.id]
+		// });
 	};
 
 	render() {
+		const loading = this.props.blogList.length === 0 ? true : false;
+		const blog = this.props.blogList[this.props.blogList.length - this.props.match.params.id];
 		return (
 			<Row>
 				<Col
@@ -45,14 +39,14 @@ class Posts extends Component {
 					xs={{ span: 24 }}
 					className='posts-wrapper'
 				>
-					<Article loading={this.state.loading} blog={this.state.blog}></Article>
+					<Article loading={loading} blog={blog}></Article>
 				</Col>
 				<Col
 					lg={{ span: 3, offset: 0 }}
 					md={{ span: 3, offset: 0 }}
 					xs={{ span: 0 }}
         		>
-					<Catalog desc={this.state.blog.desc}></Catalog>
+					{ loading ? null : <Catalog desc={blog.desc}></Catalog> }
         		</Col>
 			</Row>
 		)
