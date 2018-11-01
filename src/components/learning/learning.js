@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import { Row, Col, Icon, Collapse } from 'antd';
+import Gallery from './masonry';
 import './learning.css';
 
 const Panel = Collapse.Panel;
 
 class Learning extends Component {
 	render() {
-		console.log(this.props.blogList);
 		return(
+			// <Gallery></Gallery>
 		  <Row>
 		    <Col
 			    lg={{ span: 14, offset: 5 }}
