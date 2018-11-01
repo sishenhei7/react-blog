@@ -3,6 +3,7 @@ import {
 	Route,
 } from 'react-router-dom';
 import { Layout } from 'antd';
+import NProgress from 'nprogress';
 import Header from './header/header';
 import { getBlog, getList } from '../config/methods';
 import './layout.css';
@@ -30,9 +31,11 @@ class MyLayout extends Component {
 		this.state = {
 			blogList: [],
 		};
+		// NProgress.start();
 	};
 
 	componentDidMount() {
+		NProgress.start();
 		let blogListData = sessionStorage.getItem('blogListData') || '';
 		if(!blogListData) {
 			getBlog().then(json => {
@@ -40,12 +43,14 @@ class MyLayout extends Component {
 				this.setState({
 					blogList: data
 				});
+				NProgress.done();
 				sessionStorage.setItem('blogListData', JSON.stringify(data));
 			});
 		} else {
 			this.setState({
 				blogList: JSON.parse(blogListData)
 			});
+			NProgress.done();
 		}
 	};
 
